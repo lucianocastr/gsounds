@@ -1,0 +1,35 @@
+[
+  {
+    "tipo": "Crédito Visa",
+    "holder": "Matias Primitz",
+    "number": "4242 4242 4242 4242",
+    "exp": "12 / 34",
+    "cvc": "123",
+    "brand": "visa",
+    "last4": "4242",
+    "phone": "3515555555",
+    "email": "matiasprimitz@gmail.com"
+  },
+  {
+    "tipo": "Débito Mastercard",
+    "holder": "Matias Primitz",
+    "number": "5200 8282 8282 8210",
+    "exp": "12 / 34",
+    "cvc": "123",
+    "brand": "mastercard",
+    "last4": "8210",
+    "phone": "3515555555",
+    "email": "matiasprimitz@gmail.com"
+  },
+  {
+    "tipo": "Wallet (Stripe Link)",
+    "holder": "Matias Primitz",
+    "number": "4000 0025 0000 3155",
+    "exp": "12 / 34",
+    "cvc": "123",
+    "brand": "visa",
+    "last4": "3155",
+    "phone": "3515555555",
+    "email": "matiasprimitz@gmail.com"
+  }
+]

@@ -44,50 +44,16 @@ class Basics{
 
     }
 
-    buyTickets(){
-      //Selecciona evento
-      cy.contains('.gallery-image', 'Sofi Tukker', { timeout: 7000 }) // espera hasta 5s
+    accessProfileCards(){
+      cy.get('img[alt="User Profile"]').click();
+      cy.contains('a.menu-link', 'Ver mis tarjetas', { timeout: 3000 })
+        .should('be.visible')
+        .click();
+
+      cy.contains('button', 'Agregar Tarjeta')
       .should('be.visible')
-      .click()
+      .click();
 
-
-
-      //Selecciona tickets
-      cy.contains('button', 'Tickets', { timeout: 5000 }) // espera hasta 5s
-      .should('be.visible')
-      .click()
-
-
-      
-      const qty = 5;
-const unitPrice = 10; // €10
-
-// ubicar la fila del ticket
-cy.contains('.ticketCard_container__F09Az', 'Ingreso Anticipado')
-  .parents('.row')
-  .as('row');
-
-// sumar 5
-cy.get('@row').contains('button', '+', { timeout: 5000 }).should('be.visible');
-Cypress._.times(qty, () => {
-  cy.get('@row').contains('button', '+').click();
-});
-
-// validar total (solo el integer del botón Continuar)
-cy.contains('button', 'Continuar', { timeout: 5000 })
-  .scrollIntoView()
-  .should('be.visible')
-  .within(() => {
-    cy.get('.font-normal .money .integer')
-      .invoke('text')
-      .then(t => {
-        const intOnly = parseInt(t.replace(/\D/g, ''), 10); // "50"
-        expect(intOnly).to.eq(unitPrice * qty); // 50
-      });
-  });
-
-  //Esperar a que sea visible continuar y click
-      cy.contains('button', 'Continuar', { timeout: 5000 }).should('be.visible').click()
     }
 
 }

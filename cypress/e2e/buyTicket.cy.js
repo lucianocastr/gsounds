@@ -25,8 +25,12 @@ describe('Visitar gsound', () => {
 it('☑️💾 - Comprar Tickets', () => {
       
   let cantidad=10
-  input.buyTickets()
+  input.buyTickets(cantidad)
+  input.validarTarjetaYProcederDesdeAlias()
+  input.confirmarPago()
+
       
+//input.comprarYValidarResumen(3)
 
 
     })
